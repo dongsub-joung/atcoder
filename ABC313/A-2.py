@@ -15,5 +15,6 @@ if max_value == first:
 max_v= max(P_arr)
 
 answer= max_v-first+1
-
+if answer < 0:
+    answer=0
 print(answer)

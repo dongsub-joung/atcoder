@@ -16,7 +16,8 @@ public class Main {
             System.out.println(0);
             System.exit(0);
         }else{
-            var answer= ((int) all_max) - nums.get(0) + 1;
+            int temp= all_max.intValue();
+            var answer= temp - nums.get(0) + 1;
             System.out.println(answer);
     }
 }

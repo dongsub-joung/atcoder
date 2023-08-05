@@ -7,6 +7,11 @@ N= int(input())
 P_arr= list(map(int,input().split()))
 
 max, pivot= 0,0
+answer=0
+
+if N == 1:
+    answer=0
+    exit(0)
 
 for i, p in enumerate(P_arr):
     if i == 0:
@@ -14,6 +19,8 @@ for i, p in enumerate(P_arr):
     if max < p:
         max= p
 
-answer= abs((max+1)-pivot)
+answer= (max+1)-pivot
+if answer < 0:
+    answer=0
 
 print(answer)
