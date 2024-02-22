@@ -10,8 +10,9 @@ pub fn solution(n: i32, l: i32, k: i32, a_vec: Vec<i32>) -> i32 {
         }else{
             part_two= mid;
         }
-        println!("{:?}", a_vec);s
+        println!("{:?}", a_vec);
     }
+
     part
 }
 
@@ -29,11 +30,7 @@ fn check(mid: i32, a_vec: Vec<i32>, n: i32, l: i32, k: i32)-> bool{
         num+= 1;
     }
 
-    if num>=k+1 {
-        true
-    }else{
-        false
-    }
+    num>=k+1
 }
 
 
