@@ -12,8 +12,8 @@ println!("{}", c.to_string());
 
 // https://atcoder.jp/contests/adt_easy_20241217_1/tasks/abc304_a
 pub fn solution_b(){
-    let mut result_v= Vec::new();
-    let mut s_v: Vec<Vec<&str>>= Vec::new();
+    let mut result_v: Vec<String>= Vec::new();
+    let mut s_v: Vec<Vec<String>>= Vec::new();
 
     let std= stdin();
     let mut buf= std.lock().lines();
@@ -21,8 +21,9 @@ pub fn solution_b(){
     .parse::<u32>().unwrap();
 
     for _ in 0..n {
-        let person: Vec<&str>= buf.next().unwrap().unwrap().clone()
+        let person: Vec<String>= buf.next().unwrap().unwrap().clone()
             .split_whitespace()
+            .map(|f| f.to_string())
             .collect();
         s_v.push(person);
     }
@@ -44,11 +45,11 @@ pub fn solution_b(){
     }
 
     for i in idx..(n as usize){
-        result_v.push(s_v[i][1]);
+        result_v.push(s_v[i][0].clone());
     }
 
     for i in 0..idx{
-        result_v.push(s_v[i][1]);
+        result_v.push(s_v[i][0].clone());
     }
     
     for v in result_v {
