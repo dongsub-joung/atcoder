@@ -1,6 +1,6 @@
 use std::io::{stdin, BufRead};
 
-fn main() {
+fn solution_a() {
     let std= stdin();
     let mut buf= std.lock().lines();
     let n= buf.next().unwrap().unwrap()
@@ -21,4 +21,18 @@ fn main() {
     }else{
         println!("No");
     }
+}
+
+fn main(){
+    let std= stdin();
+    let mut buf= std.lock().lines();
+    let n= buf.next().unwrap().unwrap()
+        .parse::<usize>().unwrap();
+    let str= buf.next().unwrap().unwrap();
+
+    let mut chars: Vec<char>= str.chars().collect();
+
+    let last_element= chars.pop().unwrap();
+
+    println!("{}", last_element.to_string());
 }
