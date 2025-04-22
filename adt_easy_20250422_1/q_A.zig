@@ -9,27 +9,26 @@ pub fn main() !void {
     @memset(buffer[0..], 0);
     _ = try stdin.readUntilDelimiterOrEof(buffer[0..], '\n');
 
-    if (std.mem.eql(buffer, "ACE")) {
-        try stdout.print("Yes");
-    }
-    if (std.mem.eql(buffer, "BDF")) {
-        try stdout.print("Yes");
-    }
-    if (std.mem.eql(buffer, "CEG")) {
-        try stdout.print("Yes");
-    }
-    if (std.mem.eql(buffer, "DFA")) {
-        try stdout.print("Yes");
-    }
-    if (std.mem.eql(buffer, "EGB")) {
-        try stdout.print("Yes");
-    }
-    if (std.mem.eql(buffer, "FAC")) {
-        try stdout.print("Yes");
-    }
-    if (std.mem.eql(buffer, "GBD")) {
-        try stdout.print("Yes");
-    }
+    var idx = 0;
+    for (buffer) |e| {
+        if (idx == 0) {
+            const condition = std.mem.eql(u8, e, 'A');
+            if (condition) {
+                const remain = "CE";
+                var flag = false;
+                var flag2 = false;
+                if (buffer[1] == remain[0]) {
+                    flag = true;
+                }
+                if (buffer[2] == remain[1]) {
+                    flag2 = true;
+                }
 
-    try stdout.print("No")
+                if (flag & flag2) {
+                    stdout.print("Yes");
+                }
+            }
+        }
+    }
+    try stdout.print("No");
 }
