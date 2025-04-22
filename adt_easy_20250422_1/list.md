@@ -1,0 +1,1 @@
+- https://atcoder.jp/contests/adt_easy_20250422_1/tasks/abc312_a
