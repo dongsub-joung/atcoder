@@ -33,13 +33,13 @@ end
 
 str= gets.chomp.split("")
 
-result= check(s[1]-1, s[2]-1, str)
-
-p result
+result= check(s[1]-1, s[2], str)
 
 flag= true
 result.each do |e|
-  fla= true_checker(e)
+  if true_checker(e) == false
+    flag= false
+  end
 end
 
 
