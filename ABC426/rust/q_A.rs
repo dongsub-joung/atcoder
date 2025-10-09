@@ -10,27 +10,27 @@ fn main() {
         .map(|f| f.trim().to_string() )
         .collect();
     
-    get_idx(inputed_v[0].clone(), inputed_v[1].clone());
-    
+    let pivot_idx= get_idx(inputed_v[0].clone());
+    let compare_idx= get_idx(inputed_v[1].clone());
+
+    if pivot_idx >= compare_idx {
+        println!("Yes");
+    }else{
+        println!("No");
+    }
 }
 
-fn get_idx(pivot: String, with_os: String) -> bool{
+fn get_idx(pivot: String) -> usize{
     let os_version= Vec::from(["Ocelot".to_string(), "Serval".to_string(), "Lynx".to_string()]);
-    
-    let mut indexs: Vec<usize>= Vec::new();
+
+    let mut index= 0;
     for (i, e) in os_version.iter().enumerate() {
-        for j in  {
-            
-        }
         if *e == pivot  {
-            indexs.push(i);
-        }
+            index= i;
+            return index;
+        }   
     }
 
-    for e in indexs.iter().next() {
-        println!("{}", e);
-    }
-
-    false
+    index
 }
 
