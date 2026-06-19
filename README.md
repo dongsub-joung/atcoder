@@ -1,4 +1,4 @@
 # atcoder
 
-rust/ruby/C/kotlin
-/java/python
+CPP, Deno, rust, ruby   
+C, Zig Lnag, Java/kotlin, python   
